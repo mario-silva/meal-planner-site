@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meal Planner</title>
+    <meta
+      name="description"
+      content="Meal Planner helps you save recipes, plan weekly meals, organize ingredients, and build grocery lists."
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #243026;
+        --muted: #66705f;
+        --surface: #fffaf0;
+        --card: #ffffff;
+        --accent: #2f6f4e;
+        --accent-soft: #dbead7;
+        --line: #e8dfce;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(219, 234, 215, 0.9), transparent 34rem),
+          linear-gradient(135deg, #fffaf0 0%, #f6efe1 100%);
+        font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+      }
+
+      main {
+        width: min(68rem, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 4rem 0;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.9fr);
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .eyebrow {
+        margin: 0 0 1rem;
+        color: var(--accent);
+        font: 700 0.78rem/1.2 ui-sans-serif, system-ui, sans-serif;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 12ch;
+        margin: 0;
+        font-size: clamp(3.25rem, 9vw, 7.25rem);
+        line-height: 0.92;
+        letter-spacing: -0.07em;
+      }
+
+      .lede {
+        max-width: 42rem;
+        margin: 1.5rem 0 0;
+        color: var(--muted);
+        font-size: clamp(1.2rem, 2.4vw, 1.7rem);
+        line-height: 1.45;
+      }
+
+      .panel {
+        padding: 1.25rem;
+        border: 1px solid var(--line);
+        border-radius: 2rem;
+        background: rgba(255, 255, 255, 0.72);
+        box-shadow: 0 1.5rem 4rem rgba(36, 48, 38, 0.08);
+      }
+
+      .phone {
+        min-height: 34rem;
+        padding: 1.25rem;
+        border: 0.7rem solid var(--ink);
+        border-radius: 2.4rem;
+        background: var(--card);
+      }
+
+      .screen-title {
+        margin: 0.75rem 0 1rem;
+        font: 800 1.25rem/1.2 ui-sans-serif, system-ui, sans-serif;
+      }
+
+      .meal {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        margin: 0.75rem 0;
+        padding: 1rem;
+        border-radius: 1.1rem;
+        background: #f8f1df;
+        font: 600 0.98rem/1.3 ui-sans-serif, system-ui, sans-serif;
+      }
+
+      .meal span {
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+        margin-top: 4rem;
+      }
+
+      .feature {
+        padding: 1.35rem;
+        border: 1px solid var(--line);
+        border-radius: 1.4rem;
+        background: rgba(255, 255, 255, 0.68);
+      }
+
+      h2 {
+        margin: 0 0 0.65rem;
+        font: 800 1.1rem/1.2 ui-sans-serif, system-ui, sans-serif;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .feature p,
+      footer {
+        color: var(--muted);
+        font: 500 0.98rem/1.55 ui-sans-serif, system-ui, sans-serif;
+      }
+
+      .cta {
+        display: inline-flex;
+        margin-top: 2rem;
+        padding: 0.9rem 1.2rem;
+        border-radius: 999px;
+        color: #ffffff;
+        background: var(--accent);
+        font: 800 0.98rem/1 ui-sans-serif, system-ui, sans-serif;
+        text-decoration: none;
+      }
+
+      footer {
+        margin-top: 4rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--line);
+      }
+
+      footer a {
+        color: var(--accent);
+        font-weight: 800;
+      }
+
+      @media (max-width: 760px) {
+        main {
+          padding: 2rem 0;
+        }
+
+        .hero,
+        .features {
+          grid-template-columns: 1fr;
+        }
+
+        .phone {
+          min-height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Recipes, planning, groceries</p>
+          <h1 id="page-title">Meal Planner</h1>
+          <p class="lede">
+            A simple place to save recipes, plan the week, organize ingredients,
+            and turn meal ideas into practical grocery lists.
+          </p>
+          <a class="cta" href="support.html">Get Support</a>
+        </div>
+
+        <div class="panel" aria-label="Meal Planner preview">
+          <div class="phone">
+            <p class="screen-title">This Week</p>
+            <div class="meal">
+              <p>Monday dinner</p>
+              <span>Salmon bowls</span>
+            </div>
+            <div class="meal">
+              <p>Tuesday dinner</p>
+              <span>Lentil soup</span>
+            </div>
+            <div class="meal">
+              <p>Grocery list</p>
+              <span>12 items</span>
+            </div>
+            <div class="meal">
+              <p>Saved recipes</p>
+              <span>Ready to cook</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features" aria-label="Features">
+        <article class="feature">
+          <h2>Plan the Week</h2>
+          <p>Choose meals for each day and keep dinner decisions organized.</p>
+        </article>
+        <article class="feature">
+          <h2>Save Recipes</h2>
+          <p>Keep favorite meals together and import recipes from photos or links.</p>
+        </article>
+        <article class="feature">
+          <h2>Shop Smarter</h2>
+          <p>Use planned meals and ingredients to make grocery shopping easier.</p>
+        </article>
+      </section>
+
+      <footer>
+        <p>
+          Need help? Visit <a href="support.html">Meal Planner Support</a>.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
